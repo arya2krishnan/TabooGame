@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const Room = require("./Room")
+const Team = require("./Team")
 
 const eventSchema = new Schema({
     id: {
@@ -17,6 +19,14 @@ const eventSchema = new Schema({
     guessing: {
         type: Boolean,
         required: true
+    },
+    room: {
+        type: String,
+        required = true
+    },
+    team: {
+        type: String,
+        required = false
     }
 })
 
