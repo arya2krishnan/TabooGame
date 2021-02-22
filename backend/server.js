@@ -1,7 +1,11 @@
 const app = require('express')()
 const http = require('http').createServer(app)
-const io = require('socket.io')(http);
+const io = require('socket.io')(http)
 const mongoose = require('mongoose')
+const User = require('./models/User')
+const Team = require('./models/Team')
+const Room = require('./models/Room')
+
 mongoose.connect('mongodb+srv://orangatan:taboo@cluster0.aeoy1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 
 io.on('connection', (socket) => {
